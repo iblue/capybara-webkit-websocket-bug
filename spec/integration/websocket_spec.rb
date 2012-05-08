@@ -17,9 +17,9 @@ describe 'the bug', :js => true do
           # This leads to problems for all websocket implementations, including em-websocket-server,
           # jetty and probably em-websocket (untested). 
           if request.protocol == "myprotocol"
-            send_message "pass"
+            send_message "pass"             # This would indicate correct behavior.
           else
-            send_message "websocket-broken"
+            send_message "websocket-broken" # It does not even get this message, because the handshake fails.
           end
 
           # The support for RFC 6455 seems to be included in more recent versions. So in order to make
