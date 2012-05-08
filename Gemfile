@@ -33,3 +33,5 @@ gem 'debugger'
 gem 'execjs'
 gem 'therubyracer'
 
+gem 'em-websocket-server'
+

@@ -1,6 +1,6 @@
 <script type="text/javascript">
   if("WebSocket" in window) {
-   socket = new WebSocket("ws://#{request.host}:8888/websocket", "myprotocol");
+    socket = new WebSocket("ws://127.0.0.1:8888/websocket", "myprotocol");
 
     socket.onopen = function() {
       console.log("Websocket opened");
@@ -11,12 +11,12 @@
     }
 
     socket.onmessage = function(msg) {
-      $("#websocket-content").html("pass");
+      $("#websocket-content").html(msg);
     }
   } else {
     alert("Error: No WebSocket support available");
   }
 </script>
 
-<div id="websocket-content">fail</div>
+<div id="websocket-content">empty</div>
 
