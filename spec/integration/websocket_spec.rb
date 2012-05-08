@@ -17,7 +17,7 @@ describe 'the bug', :js => true do
           # This leads to problems for all websocket implementations, including em-websocket-server,
           # jetty and probably em-websocket (untested). 
           if request.protocol == "myprotocol"
-            send_message "pass" 
+            send_message "pass"
           else
             send_message "websocket-broken"
           end
