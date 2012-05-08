@@ -1,8 +1,17 @@
-== Demo of a bug in capybara-webkit
+Demo of a bug in capybara-webkit
+================================
 
-The implementation if WebSockets in capybara-webkit seems to be buggy. It still uses an old draft
-of the WebSocket implementation that seems to be broken. In order to reproduce the issue, just
+The implementation of WebSockets in capybara-webkit seems to be buggy. It still uses an old draft
+of the WebSocket implementation that seems to be broken. 
+
+Reproducing the bug
+-------------------
+
+In order to reproduce the issue, just
 clone this repository, <tt>bundle installk</tt> and <tt>rake spec</tt>.
+
+Details
+-------
 
 The probleme here is, that it sends a `WebSocket-Protocol` header instead of the expected RFC 6455
 `Sec-WebSocket-Protocol` header. It also terminates the connection, if does not receive the same
