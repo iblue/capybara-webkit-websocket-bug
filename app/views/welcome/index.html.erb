@@ -1,0 +1,22 @@
+<script type="text/javascript">
+  if("WebSocket" in window) {
+   socket = new WebSocket("ws://#{request.host}:8888/websocket", "myprotocol");
+
+    socket.onopen = function() {
+      console.log("Websocket opened");
+    }
+
+    socket.onclose = function(){
+      console.log("Websocket closed");
+    }
+
+    socket.onmessage = function(msg) {
+      $("#websocket-content").html("pass");
+    }
+  } else {
+    alert("Error: No WebSocket support available");
+  }
+</script>
+
+<div id="websocket-content">fail</div>
+
